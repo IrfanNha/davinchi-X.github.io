@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="dist/output.css" />
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body>
+    <!-- header -->
+    <header
+      class="absolute left-0 top-0 z-10 flex w-full items-center bg-transparent"
+    >
+      <div class="container">
+        <div class="relative flex items-center justify-between">
+          <div class="px-4">
+            <a href="#home" class="block py-6 text-lg font-bold text-primary"
+              >irfannh.</a
+            >
+          </div>
+          <div class="flex items-center px-4">
+            <button
+              id="hamburger"
+              name="hamburger"
+              type="button"
+              class="absolute right-4 block lg:hidden"
+            >
+              <span
+                class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"
+              ></span>
+
+              <span
+                class="hamburger-line transition duration-300 ease-in-out"
+              ></span>
+
+              <span
+                class="hamburger-line origin-top-left transition duration-300 ease-in-out"
+              ></span>
+            </button>
+            <nav
+              id="nav-menu"
+              class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg dark:bg-dark dark:shadow-slate-700 lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none lg:dark:bg-transparent"
+            >
+              <ul class="block lg:flex">
+                <li class="group">
+                  <a
+                    href="#home"
+                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"
+                    >Beranda</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#about"
+                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"
+                    >Tentang Saya</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#portfolio"
+                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"
+                    >Portfolio</a
+                  >
+                </li>
+
+                <li class="group">
+                  <a
+                    href="#clients"
+                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"
+                    >Clients</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#services"
+                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"
+                    >Services</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#contact"
+                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"
+                    >Contact</a
+                  >
+                </li>
+                <li class="mt-3 flex items-center pl-8 lg:mt-0">
+                  <div class="flex">
+                    <span class="mr-2 text-sm text-slate-500">light</span>
+                    <input type="checkbox" class="hidden" id="dark-toggle" />
+                    <label for="dark-toggle">
+                      <div
+                        class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1"
+                      >
+                        <div
+                          class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out"
+                        ></div>
+                      </div>
+                    </label>
+                    <span class="ml-2 text-sm text-slate-500">dark</span>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- header -->
+
+    <!-- Hero -->
+    <section id="home" class="pt-28 dark:bg-dark lg:pt-0">
+      <div class="container">
+        <div class="flex flex-wrap">
+          <div class="w-full self-center px-4 lg:w-1/2">
+            <h1 class="text-base font-semibold text-primary md:text-xl">
+              Hi Semua , Saya
+              <span
+                class="mt-1 block text-4xl font-bold text-dark dark:text-white lg:text-5xl"
+                >Irfan Nuha</span
+              >
+            </h1>
+            <h2 class="mb-5 text-lg font-medium text-secondary lg:text-2xl">
+              Full Stack
+              <span class="text-dark dark:text-white">Developer</span>
+            </h2>
+            <p class="mb-10 font-medium leading-relaxed text-secondary">
+              Saya siswa di salah satu Sekolah Menengah Kejuruan di Semarang
+            </p>
+            <a
+              href="#contact"
+              class="rounded-full bg-primary px-8 py-3 text-base font-semibold text-white transition duration-300 ease-in-out hover:opacity-80 hover:shadow-lg"
+              >Hubungi Saya</a
+            >
+          </div>
+
+          <div class="w-full self-end px-4 lg:w-1/2">
+            <div class="relative mt-10 lg:right-0 lg:mt-9">
+              <img
+                src="dist/img/irfan.jpeg"
+                alt="irfan"
+                class="relative z-10 mx-auto max-w-full rounded-tl-full rounded-tr-full lg:scale-50 shadow-md dark:border-b-8 dark:border-primary"
+              />
+              <!-- <span
+                class="absolute -bottom-7 left-1/2 -translate-x-1/2 md:scale-100 lg:-bottom-0"
+              >
+                <svg
+                  width="400"
+                  height="400"
+                  viewBox="0 0 200 200"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill="#14b8a6"
+                    d="M62.7,-38C72,-20.2,63.8,5.9,50.4,26.2C37,46.5,18.5,60.9,-2.6,62.4C-23.8,64,-47.6,52.6,-61.4,32.1C-75.1,11.6,-78.9,-18.1,-67,-37.4C-55.1,-56.7,-27.5,-65.8,-0.4,-65.5C26.7,-65.3,53.5,-55.8,62.7,-38Z"
+                    transform="translate(100 100) scale(1)"
+                  />
+                </svg> -->
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Hero -->
+
+    <!-- about -->
+    <section id="about" class="pb-36 pt-36 dark:bg-dark">
+      <div class="container">
+        <div class="flex flex-wrap">
+          <div class="mb-10 w-full px-4 lg:w-1/2">
+            <h4 class="mb-3 text-lg font-bold uppercase text-primary">
+              Tentang Saya
+            </h4>
+            <h2
+              class="mb-5 max-w-md text-3xl font-bold text-dark dark:text-white lg:text-4xl"
+            >
+              Fullstack developer & Pelajar
+            </h2>
+            <p class="max-w-xl text-base font-medium text-secondary lg:text-lg">
+              Fullstack?, apaan tuh 🤔?, jadi singkatnya semua ditangani oleh saya sendiri mulai dari back end dan front end ditangani oleh saya sendiri, 
+              selain itu saya juga siswa di salah satu SMK terkenal😎 di Semarang.
+            </p>
+          </div>
+
+          <div class="mb-10 w-full px-4 lg:w-1/2">
+            <h3
+              class="mb-4 text-2xl font-bold text-dark dark:text-white lg:pt-10 lg:text-3xl"
+            >
+              Mari Berteman
+            </h3>
+            <p class="mb-6 text-base font-medium text-secondary lg:text-lg">
+              Mau berteman?, ayo aja gw ma 😂, dibawah berikut daftar social media saya.
+            </p>
+            <div class="flex items-center">
+              <a
+                href="https://www.facebook.com/irfan.nuha.12"
+                target="_blank"
+                class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-secondary text-secondary hover:border-primary hover:bg-primary hover:text-white"
+              >
+                <svg
+                  role="img"
+                  width="24"
+                  class="fill-current"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>Facebook</title>
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  />
+                </svg>
+              </a>
+
+              <!--  -->
+              <a
+                href="https://github.com/davinchi-X"
+                target="_blank"
+                class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-secondary text-secondary hover:border-primary hover:bg-primary hover:text-white"
+              >
+                <svg
+                  role="img"
+                  width="24"
+                  class="fill-current"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>GitHub</title>
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                  />
+                </svg>
+              </a>
+
+              <!--  -->
+              <a
+                href="twitter.com"
+                target="_blank"
+                class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-secondary text-secondary hover:border-primary hover:bg-primary hover:text-white"
+              >
+                <svg
+                  role="img"
+                  width="24"
+                  class="fill-current"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>Twitter</title>
+                  <path
+                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                  />
+                </svg>
+              </a>
+
+              <!--  -->
+              <a
+                href=""
+                target="_blank"
+                class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-secondary text-secondary hover:border-primary hover:bg-primary hover:text-white"
+              >
+                <svg
+                  role="img"
+                  width="24"
+                  class="fill-current"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>Gmail</title>
+                  <path
+                    d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- about -->
+
+    <!-- portfolio -->
+    <section id="portfolio" class="bg-slate-100 pb-16 pt-36 dark:bg-slate-800">
+      <div class="container">
+        <div class="w-full px-4">
+          <div class="mx-auto mb-16 max-w-xl text-center">
+            <h4 class="text-lg font-semibold text-primary">Portfolio</h4>
+            <h2
+              class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl"
+            >
+              Project Terbaru
+            </h2>
+            <p class="text-md font-medium text-secondary">
+              Berikut daftar project saya selama menjadi fullstack developer 
+            </p>
+          </div>
+        </div>
+        <!-- project -->
+        <div
+          class="flex w-full flex-wrap justify-center px-4 xl:mx-auto xl:w-10/12"
+        >
+          <div class="mb-12 p-4 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img
+                src="dist/img/portfolio/article-post.jpg"
+                alt="web ppdb"
+                width="w-full"
+              />
+            </div>
+            <h3
+              class="mb-3 mt-5 text-xl font-semibold text-dark dark:text-white"
+            >
+              Website Artikel Post
+            </h3>
+            <p class="text-base font-medium text-secondary">
+              Website Artikel Post adalah website yang memungkinkan orang dapat mempublikasikan artikel secara mudah dan portable,
+               dibangun dengan PHP 8.0 <a href="https://tribune-skanilan.000webhostapp.com/" class="px-3 text-primary text-lg font-semibold transition duration-300 ease-in-out hover:opacity-80 hover:shadow-lg" target="_blank"> Lihat</a>
+            </p>
+          </div>
+          <!-- project -->
+          <div class="mb-12 p-4 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img
+                src="dist/img/portfolio/1.jpg"
+                alt="web ppdb"
+                width="w-full"
+              />
+            </div>
+            <h3
+              class="mb-3 mt-5 text-xl font-semibold text-dark dark:text-white"
+            >
+              Website Pendaftaran Sekolah
+            </h3>
+            <p class="text-base font-medium text-secondary">
+              Website Pendaftaran Sekolah website yang dapat mempermudah Pendaftaran sekolah, dapat dilakukan dimanapun dan kapanpun, dibangun menggunakan codeiginiter 4.
+            </p>
+          </div>
+          <!-- project -->
+          <div class="mb-12 p-4 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img
+                src="dist/img/portfolio/article-post.jpg"
+                alt="web ppdb"
+                width="w-full"
+              />
+            </div>
+            <h3
+              class="mb-3 mt-5 text-xl font-semibold text-dark dark:text-white"
+            >
+              Website Artikel Post Laravel
+            </h3>
+            <p class="text-base font-medium text-secondary">
+              Website Artikel Post adalah website yang memungkinkan orang dapat mempublikasikan artikel secara mudah dan portable, dengan framework laravel, website lebih rapi dan url tidak banyak menampilkan parameter
+            </p>
+          </div>
+          <!-- project -->
+          <div class="mb-12 p-4 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img
+                src="dist/img/portfolio/e-commerce.jpg"
+                alt="web ppdb"
+                width="w-full"
+              />
+            </div>
+            <h3
+              class="mb-3 mt-5 text-xl font-semibold text-dark dark:text-white"
+            >
+              Website Ecommerce 
+            </h3>
+            <p class="text-base font-medium text-secondary">
+              Landing Page Ecommerce, website ini berguna untuk menampilkan product dari suatu brand agar calon customer lebih mudah melihat profil produk.
+              <a href="https://ukm-handycraft.netlify.app/" class="px-3 text-primary text-lg font-semibold transition duration-300 ease-in-out hover:opacity-80 hover:shadow-lg" target="_blank"> Lihat</a>
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- portfolio -->
+
+    <!-- Clients -->
+    <section id="clients" class="bg-slate-700 pb-32 pt-36 dark:bg-slate-300">
+      <div class="container">
+        <div class="w-full px-4">
+          <div class="mx-auto mb-16 text-center">
+            <h4 class="text-lg font-semibold text-primary">Clients</h4>
+            <h2
+              class="mb-4 text-3xl font-bold text-white dark:text-dark sm:text-4xl lg:text-5xl"
+            >
+              Yang Pernah Bekerjasama
+            </h2>
+            <p class="text-md font-medium text-secondary md:text-lg">
+              Berikut beberapa Perusahanan yang pernah Bekerjasama dengan saya.
+            </p>
+          </div>
+        </div>
+        <div class="w-full px-4">
+          <div class="flex flex-wrap items-center justify-center">
+            <!-- daftar client -->
+            <a
+              href="#"
+              class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8"
+            >
+              <img src="dist/img/clients/laravel.svg" alt=" " />
+            </a>
+            <!-- daftar client -->
+            <a
+              href="#"
+              class="mx-4 max-w-[50px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8"
+            >
+              <img src="dist/img/clients/meta.svg" alt=" " />
+            </a>
+            <!-- daftar client -->
+            <a
+              href="#"
+              class="mx-4 max-w-[50px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8"
+            >
+              <img src="dist/img/clients/google.svg" alt=" " />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Clients -->
+
+    <!-- Services -->
+    <section id="services" class="bg-slate-100 pb-32 pt-36 dark:bg-dark">
+      <div class="w-full px-4">
+        <div class="mx-auto mb-16 max-w-xl text-center">
+          <h4 class="text-lg font-semibold text-primary">Services</h4>
+          <h2
+            class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl"
+          >
+            Pelayanan Saya
+          </h2>
+          <p class="text-md font-medium text-secondary">
+            Saya melayani jasa pembuatan Landing Page dan pemeliharaan website, saya juga melayani jasa hosting website dan desain grafis. 
+          
+          </p>
+        </div>
+      </div>
+      <div class="container flex flex-wrap">
+        <!-- Daftar Services -->
+        <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+          <div
+            class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800"
+          >
+            <img
+              src="https://source.unsplash.com/360x200?website"
+              alt=""
+              class="w-full"
+            />
+            <div class="px-6 py-8">
+              <a
+                href=""
+                class="mb-3 block truncate text-xl font-semibold text-dark transition duration-500 hover:text-primary dark:text-white"
+              >
+                <h3>Pembuatan Website</h3>
+              </a>
+              <p class="mb-6 text-base font-medium text-secondary">
+                Melayani pembuatan Website statis maupun realtime update website, dan juga melayani pembuatan website laravel code & igniter.
+                <br>
+              </p>
+              <a
+                href="#contact"
+                class="rounded-md bg-primary px-4 py-2 text-sm font-medium text-white transition duration-500 hover:bg-opacity-80"
+              >
+                Lihat
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Daftar Services -->
+        <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+          <div
+            class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800"
+          >
+            <img
+              src="https://source.unsplash.com/360x200?web-design"
+              alt=""
+              class="w-full"
+            />
+            <div class="px-6 py-8">
+              <a
+                href=""
+                class="mb-3 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white"
+              >
+                <h3>Pemeliharaan dan Hosting Website</h3>
+              </a>
+              <p class="mb-6 text-base font-medium text-secondary">
+                Saya juga melayani pemeliharaan website, seperti perbaikan, menambah fitur, dan Hosting website.
+              </p>
+              <a
+                href="#contact"
+                class="rounded-md bg-primary px-4 py-2 text-sm font-medium text-white transition duration-500 hover:bg-opacity-80"
+              >
+                Lihat
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Daftar Services -->
+        <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+          <div
+            class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800"
+          >
+            <img
+              src="https://source.unsplash.com/360x200?graphic-design"
+              alt=""
+              class="w-full"
+            />
+            <div class="px-6 py-8">
+              <a
+                href=""
+                class="mb-3 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white"
+              >
+                <h3>Desain Grafis</h3>
+              </a>
+              <p class="mb-6 text-base font-medium text-secondary">
+                Saya juga melayani desain grafis, seperti pembuatan logo, pembuatan desain poster dan kemasan produk.
+              </p>
+              <a
+                href="#contact"
+                class="rounded-md bg-primary px-4 py-2 text-sm font-medium text-white transition duration-500 hover:bg-opacity-80"
+              >
+                Lihat
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services -->
+
+    <!-- Contact -->
+    <section id="contact" class="pb-32 pt-36 dark:bg-slate-800">
+      <div class="container">
+        <div class="w-full px-4">
+          <div class="mx-auto mb-16 max-w-xl text-center">
+            <h4 class="text-lg font-semibold text-primary">Contact</h4>
+            <h2
+              class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl"
+            >
+              Hubungi Kami
+            </h2>
+            <p class="text-md font-medium text-secondary">
+              Hubungi saya jika ingin berkolaborasi atau ingin membuka komisi dan meminta jasa saya, dan hubungi saya juga jika tedapat kesalahan atau bug.
+            </p>
+          </div>
+
+            <div class="w-full lg:mx-auto lg:w-2/3">
+              <div class="mb-8 w-full px-4">
+                <label for="fullName" class="text-base font-bold text-primary"
+                  >Nama</label
+                >
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  class="my-2 w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                />
+
+                <label for="email_id" class="text-base font-bold text-primary"
+                  >Email</label
+                >
+                <input
+                  type="text"
+                  id="email_id"
+                  name="email_id"
+                  class="my-2 w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                />
+
+                <label for="message" class="text-base font-bold text-primary"
+                  >Pesan</label
+                >
+                <textarea
+                  type="text"
+                  id="message"
+                  name="message"
+                  class="my-2 w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                  height="32"
+                ></textarea>
+              </div>
+              <div class="w-full px-4">
+                <button
+                  class="w-full rounded-full bg-primary px-8 py-3 text-base font-semibold text-white transition duration-500 hover:opacity-80 hover:shadow-lg"
+                  type="submit" id="sendButton" onclick="SendMail(); clear()"
+                >
+                  Kirim
+                </button>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact -->
+
+    <!-- Footer -->
+    <footer class="bg-dark pb-12 pt-24">
+      <div class="container">
+        <div class="flex flex-wrap">
+          <div class="mb-12 w-full px-4 md:w-1/3">
+            <div class="font-medium text-slate-300">
+              <h2 class="mb-5 text-4xl font-bold text-white">Irfan</h2>
+              <h3 class="mb-5 text-3xl font-bold">Hubungi Saya</h3>
+              <p>irfan.responses@gmail.com</p>
+              <p>Semarang - Indonesia</p>
+            </div>
+          </div>
+
+          <div class="mb-12 w-full px-4 md:w-1/3">
+            <h3 class="mb-5 text-xl font-semibold text-white">Kategori</h3>
+            <ul class="text-slate-300">
+              <li>
+                <a
+                  href="#"
+                  class="mb-3 inline-block text-base hover:text-primary"
+                  >Front End</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="mb-3 inline-block text-base hover:text-primary"
+                  >Back End</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="mb-3 inline-block text-base hover:text-primary"
+                  >Maintenance</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="mb-12 w-full px-4 md:w-1/3">
+            <h3 class="mb-5 text-xl font-semibold text-white">Tautan</h3>
+            <ul class="text-slate-300">
+              <li>
+                <a
+                  href="#"
+                  class="mb-3 inline-block text-base hover:text-primary"
+                  >Beranda</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="mb-3 inline-block text-base hover:text-primary"
+                  >Tentang Saya</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="mb-3 inline-block text-base hover:text-primary"
+                  >Portfolio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="mb-3 inline-block text-base hover:text-primary"
+                  >Clients</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="mb-3 inline-block text-base hover:text-primary"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="mb-3 inline-block text-base hover:text-primary"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="w-full border-t border-slate-700 pt-10">
+          <div class="mb-5 flex items-center justify-center">
+            <a
+              href="https://youtube.com/"
+              target="_blank"
+              class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-secondary text-secondary hover:border-primary hover:bg-primary hover:text-white"
+            >
+              <svg
+                role="img"
+                width="24"
+                class="fill-current"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>Facebook</title>
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+            </a>
+
+            <!--  -->
+            <a
+              href="https://youtube.com/"
+              target="_blank"
+              class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-secondary text-secondary hover:border-primary hover:bg-primary hover:text-white"
+            >
+              <svg
+                role="img"
+                width="24"
+                class="fill-current"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>GitHub</title>
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                />
+              </svg>
+            </a>
+
+            <!--  -->
+            <a
+              href="https://youtube.com/"
+              target="_blank"
+              class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-secondary text-secondary hover:border-primary hover:bg-primary hover:text-white"
+            >
+              <svg
+                role="img"
+                width="24"
+                class="fill-current"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>Twitter</title>
+                <path
+                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                />
+              </svg>
+            </a>
+
+            <!--  -->
+            <a
+              href="https://youtube.com/"
+              target="_blank"
+              class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-secondary text-secondary hover:border-primary hover:bg-primary hover:text-white"
+            >
+              <svg
+                role="img"
+                width="24"
+                class="fill-current"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>Gmail</title>
+                <path
+                  d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"
+                />
+              </svg>
+            </a>
+          </div>
+          <p class="text-center text-xs font-medium text-slate-500">
+            Dibuat oleh Irfan Nuha, Menggunakan menggunakan
+            <a
+              href="https://tailwindcss.com"
+              target="_blank"
+              class="font-bold text-sky-500"
+            >
+              Tailwind CSS
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer -->
+
+    <!-- Tombol To Top -->
+    <a
+      id="to-top"
+      href="#home"
+      class="fixed bottom-4 right-4 z-[9999] hidden h-14 w-14 items-center justify-center rounded-full bg-primary bg-opacity-70 backdrop-blur-sm hover:animate-pulse"
+    >
+      <span class="mt-2 block h-5 w-5 rotate-45 border-l-2 border-t-2"></span>
+    </a>
+    <!-- To Top -->
+
+    <script src="dist/js/script.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init('pwwOfiy7mR8TUI-FY');
+        })();
+    </script>
+  </body>
+</html>
